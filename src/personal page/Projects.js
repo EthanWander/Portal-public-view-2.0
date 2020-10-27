@@ -9,7 +9,7 @@ function Projects({date, viewProj, setViewProj, winDim}){
   const [onBtn, setOnBtn] = useState(false);
   const [color, setColor] = useState("rgb(0,130,130)");
   
-  const num = 8;
+  const num = 10;
   const pad = 15; // actual padding is sqrt(2)*pad
   const startOpac = 300;
   const d = 300;
@@ -69,15 +69,22 @@ function Projects({date, viewProj, setViewProj, winDim}){
     
     let listValues = JSON.parse(localStorage.getItem('list'));  // get items
     let newList = ret;
-    if(listValues !== null) 
-    if(listValues.length === num)
-    {
-      for(let i=0; i<ret.length; i++){
-        newList[i].empty = listValues[i].empty;
-        newList[i].imgUrl = listValues[i].imgUrl;
-        newList[i].text = listValues[i].text;
-        newList[i].textColor = listValues[i].textColor;
+    if(listValues !== null) {
+      if(listValues.length === num)
+      {
+        for(let i=0; i<ret.length; i++){
+          newList[i].empty = listValues[i].empty;
+          newList[i].imgUrl = listValues[i].imgUrl;
+          newList[i].text = listValues[i].text;
+          newList[i].textColor = listValues[i].textColor;
+        }
       }
+    }
+    else {
+      newList[4].empty = false;
+      newList[4].imgUrl = "https://images.unsplash.com/photo-1579546929518-9e396f3cc809?ixlib=rb-1.2.1&w=1000&q=80";
+      newList[4].text = "Lorem Ipsum";
+      newList[4].textColor = "255,255,255";
     }
             
     setList(newList);
