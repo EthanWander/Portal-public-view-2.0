@@ -2,14 +2,8 @@ import React, { useState, useEffect } from 'react';
 import Item from './Item.js';
 import EditProject from './EditProject.js';
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {width, height};
-}
-
-function Projects({date, viewProj, setViewProj}){
+function Projects({date, viewProj, setViewProj, winDim}){
   const [list, setList] = useState([]);
-  const [winDim, setWinDim] = useState(getWindowDimensions());
   const [showPopUp, setShowPopUp] = useState(false);
   const [item, setItem] = useState({});
   const [onBtn, setOnBtn] = useState(false);

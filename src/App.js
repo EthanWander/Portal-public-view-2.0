@@ -3,19 +3,28 @@ import './App.css';
 import './styles/proj-strip.css';
 import './styles/project.css';
 import './styles/edit-window.css';
+import './styles/SeeCV.css';
 import Profile from './images/LinkedIn1.jpeg';
 import Projects from './personal page/Projects.js';
 import ProfileEditor from './personal page/ProfileEditor.js';
 import AboutEditor from './personal page/AboutEditor.js';
 import ViewProject from './personal page/ViewProject.js';
+import SeeCV from './SeeCV.js';
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {width, height};
+}
 
 function App({date}) {
   const [aboutTxtShowAll, setAboutTxtShowAll] = useState(false);
   const [onProfileEditor, setOnProfileEditor] = useState(false);
+  const [winDim, setWinDim] = useState(getWindowDimensions());
   const [profile, setProfile] = useState({name: "Eitan Wander", occupation: "Software Engineer", email: "ethanwander@gmail.com"});
   const [onAboutEditor, setOnAboutEditor] = useState(false);
   const [aboutTxt, setAboutTxt] = useState("Experienced Software Developer with a thorough knowledge in the following coding languages: C#, Java, Python, JavaScript, HTML, CSS and React. Currently studying for my Bachelor’s Degree in Mathematics and Physics at the University of Bar Ilan (1 year to graduation). Highly motivated, passionate about technology, a self-learner with a proactive and a hands on approach. Looking for a part time Software Development job.");
   const [viewProj, setViewProj] = useState(false);
+  const [viewCV, setViewCV] = useState(false);
 
   const aboutTxtLim = 300;
   
@@ -27,6 +36,11 @@ function App({date}) {
   const handleEditAboutBtn = (e) => {
     e.preventDefault();
     setOnAboutEditor(true);
+  }
+  
+  const handleSeeCVBtn = (e) => {
+    e.preventDefault();
+    setViewCV(true);
   }
   
   const getAboutTxt = () => {
@@ -86,7 +100,7 @@ function App({date}) {
             </button>
           </p>
         </div>
-        <button className="see-cv-btn">See C.V.</button>
+        <button className="see-cv-btn" onClick={handleSeeCVBtn}>See C.V.</button>
       </div>
       
       <AboutEditor 
@@ -96,9 +110,23 @@ function App({date}) {
         setAboutTxt={setAboutTxt}
       />
       
-      <ViewProject  viewProj={viewProj} setViewProj={setViewProj} />
+      <SeeCV
+        viewCV={viewCV}
+        setViewCV={setViewCV}
+        winDim={winDim}
+      />
       
-      <Projects date={date} viewProj={viewProj} setViewProj={setViewProj}/>
+      <ViewProject  
+        viewProj={viewProj} 
+        setViewProj={setViewProj} 
+      />
+      
+      <Projects 
+        date={date} 
+        winDim={winDim} 
+        viewProj={viewProj} 
+        setViewProj={setViewProj}
+      />
     </div>
   );
 }

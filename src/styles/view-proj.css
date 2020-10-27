@@ -56,8 +56,9 @@
 .CodeMirror{
   height: 78vh;
   background-color: #000000;
+  padding-left: 1rem;
 }
 
 .cm-s-default, .cm-s-material {
-background-color: #000;
+  background-color: #000;
 }
