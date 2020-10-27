@@ -14,7 +14,7 @@ function App({date}) {
   const [onProfileEditor, setOnProfileEditor] = useState(false);
   const [profile, setProfile] = useState({name: "Eitan Wander", occupation: "Software Engineer", email: "ethanwander@gmail.com"});
   const [onAboutEditor, setOnAboutEditor] = useState(false);
-  const [aboutTxt, setAboutTxt] = useState("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Odit voluptatem porro rerum neque magni, est, esse impedit reprehenderit enim maxime odio debitis laboriosam, magnam dolorem praesentium harum minima! Consequuntur, quam, quo? Nobis, dolores commodi. Perferendis atque soluta nemo, modi ut, dignissimos porro assumenda illum ea quo quae nam rerum sint, mollitia aperiam, asperiores consequatur. Debitis iusto unde omnis, dolore nesciunt? Rem qui consequuntur natus, beatae quia, temporibus cum sunt, autem quasi, voluptatum fugit debitis sequi saepe nisi nesciunt aperiam quis?");
+  const [aboutTxt, setAboutTxt] = useState("Experienced Software Developer with a thorough knowledge in the following coding languages: C#, Java, Python, JavaScript, HTML, CSS and React. Currently studying for my Bachelor’s Degree in Mathematics and Physics at the University of Bar Ilan (1 year to graduation). Highly motivated, passionate about technology, a self-learner with a proactive and a hands on approach. Looking for a part time Software Development job.");
   const [viewProj, setViewProj] = useState(false);
 
   const aboutTxtLim = 300;
@@ -41,8 +41,10 @@ function App({date}) {
   }
   
   useEffect(() => {
-    setProfile(JSON.parse(localStorage.getItem('profile')));
-    setAboutTxt(JSON.parse(localStorage.getItem('about')));
+    let locProfile = JSON.parse(localStorage.getItem('profile'));
+    let locAboutTxt = JSON.parse(localStorage.getItem('about'));
+    if(locProfile !== null) setProfile(locProfile);
+    if(locAboutTxt !== null) setAboutTxt(locAboutTxt);
   }, []);
   useEffect(() => {
     localStorage.setItem('profile', JSON.stringify(profile));
