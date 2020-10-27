@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/Portal-public-view-2.0/static/css/main.19662a20.chunk.css",
+    "main.js": "/Portal-public-view-2.0/static/js/main.c2afe2ab.chunk.js",
+    "main.js.map": "/Portal-public-view-2.0/static/js/main.c2afe2ab.chunk.js.map",
+    "runtime-main.js": "/Portal-public-view-2.0/static/js/runtime-main.f8216a82.js",
+    "runtime-main.js.map": "/Portal-public-view-2.0/static/js/runtime-main.f8216a82.js.map",
+    "static/css/2.23249a66.chunk.css": "/Portal-public-view-2.0/static/css/2.23249a66.chunk.css",
+    "static/js/2.a1ead1cc.chunk.js": "/Portal-public-view-2.0/static/js/2.a1ead1cc.chunk.js",
+    "static/js/2.a1ead1cc.chunk.js.map": "/Portal-public-view-2.0/static/js/2.a1ead1cc.chunk.js.map",
+    "index.html": "/Portal-public-view-2.0/index.html",
+    "static/css/2.23249a66.chunk.css.map": "/Portal-public-view-2.0/static/css/2.23249a66.chunk.css.map",
+    "static/css/main.19662a20.chunk.css.map": "/Portal-public-view-2.0/static/css/main.19662a20.chunk.css.map",
+    "static/js/2.a1ead1cc.chunk.js.LICENSE.txt": "/Portal-public-view-2.0/static/js/2.a1ead1cc.chunk.js.LICENSE.txt",
+    "static/media/LinkedIn1.531c1bc7.jpeg": "/Portal-public-view-2.0/static/media/LinkedIn1.531c1bc7.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f8216a82.js",
+    "static/css/2.23249a66.chunk.css",
+    "static/js/2.a1ead1cc.chunk.js",
+    "static/css/main.19662a20.chunk.css",
+    "static/js/main.c2afe2ab.chunk.js"
+  ]
+}
