@@ -1,0 +1,156 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
+body{
+  padding-top: 8vh;
+}
+
+button{
+  border: none;
+  outline: none;
+  background: rgba(0,0,0,0);
+  font-size: 25px;
+  cursor: pointer;
+}
+
+
+
+.profile-strip{
+  display: flex;
+  justify-content: space-between;
+  padding-right: 10vw;
+  padding-left: 10vw;
+  align-items: center;
+}
+
+.profile{
+  flex-grow: 1;
+  color: rgb(30,30,30);
+}
+
+.profile h1{
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+
+.profile p{
+  font-size: 20px;
+}
+
+.profile-img{
+  height: auto;
+  width: 35vh;
+  float: left;
+	margin-right:2rem; 
+	shape-outside:circle();
+  border-radius: 50%;
+}
+
+.contact-btns button{
+  border: 1px solid rgb(30,30,30);
+  background: rgba(0,0,0,0);
+  outline: none;
+  cursor: pointer;
+  width: 7rem;
+  padding: 0.5rem 1rem;
+  margin-left: -1px;
+  font-size: 20px;
+}
+
+.contact-btns button:hover{
+  background: rgba(0,0,0,0.1);
+}
+
+.edit-profile-btn i{
+  margin-left: 1rem;
+  font-size: 0.8em;
+}
+
+
+
+.about-strip{
+  margin-top: 8vh;
+  padding-right: 10vw;
+  padding-left: 8vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.about{
+  color: rgb(30,30,30);
+  width: 40rem;
+  border: 1px solid rgb(30,30,30);
+  padding: 1rem;
+  overflow: hidden;
+}
+
+.about-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-right: 1em;
+}
+
+.about h1{
+  font-size: 2em;
+  padding-left: 1rem;
+  padding-bottom: 0.4rem;
+}
+
+.edit-about-btn{
+  font-size: 20px;
+}
+
+.about p{
+  font-size: 18px;
+}
+
+.read-more-btn {
+  display: inline;
+  margin-left: 1rem;
+  background: rgba(0,0,0,0);
+  color: rgb(30,30,30);
+  outline: none;
+  cursor: pointer;
+  border: none;
+  font-size: 1em;
+  font-weight: bold;
+}
+
+.read-more-btn:hover{
+  color: rgb(0,0,0);
+}
+
+.see-cv-btn{
+  border: 1px solid rgb(30,30,30);
+  background: rgba(0,0,0,0);
+  outline: none;
+  cursor: pointer;
+  width: 7rem;
+  padding: 0.5rem 1rem;
+  font-size: 20px;
+}
+
+.see-cv-btn:hover{
+  background: rgba(0,0,0,0.1);
+}
+
+
+
+.pop-up{
+  position: fixed;
+  width: 60vw;
+  height: 60vh;
+  background: rgba(0,0,0,.7);
+  top: 20vh;
+  left: 20vw;
+  justify-content: center;
+  align-items: center;
+}
+
+

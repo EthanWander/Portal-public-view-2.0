@@ -1,0 +1,90 @@
+.editor-pop-up{
+  height: auto;
+  z-index: 2;
+}
+
+form{
+  color: white;
+  position: relative;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+form div{
+  margin-bottom: 20px;
+}
+
+form input{
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid white;
+  font-size: 30px;
+  color: white;
+  text-align: center;
+}
+
+form textarea{
+  outline: none;
+  background-color: rgba(0,0,0,0);
+  border: 1px solid white;
+  font-size: 30px;
+  color: white;
+}
+
+form button{
+  border: 1px solid white;
+  outline: none;
+  background: rgba(0,0,0,0);
+  cursor: pointer;
+  color: white;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+  padding: 5px;
+}
+
+form button:hover{
+  color: rgba(255,255,255,0.7);
+}
+
+
+.edit-header{
+  height: 2em;
+  border-bottom: 1px solid white;
+  color: white;
+  font-size: 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 1em;
+}
+
+.exit-edit-btn{
+  border: none;
+  outline: none;
+  background: rgba(0,0,0,0);
+  color: white;
+  font-size: 25px;
+  cursor: pointer;
+}
+
+.form-btns{
+  padding-bottom: 1em;
+}
+
+#about-input{
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+#edit-main{
+  display: block;
+  padding: 1em;
+}
+
+#save-btn{
+  float: right;
+}

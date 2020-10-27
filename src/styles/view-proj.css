@@ -1,0 +1,63 @@
+.view-proj{
+  position: fixed;
+  width: 80vw;
+  z-index: 2;
+  top: 6vh;
+  left: 10vw;
+  font-size: 25px;
+}
+
+.proj-nav-bar{
+  display: flex;
+  justify-content: space-between;
+}
+
+.nav-item{
+  background-color: rgba(0,0,0,0);
+  border-bottom: 2rem solid rgb(0,100,100);
+    border-left: 2rem solid transparent;
+    border-right: 2rem solid transparent;
+    height: 0;
+    width: 200px;
+  display: flex;
+  margin-bottom: -0.3rem;
+  justify-content: center;
+  color: white;
+}
+
+.proj-window-options .nav-item{
+  width: 70px;
+  border-left: 1rem solid transparent;
+  border-right: 1rem solid transparent;
+}
+
+.nav-item i{
+  margin-top: 0.2rem;
+}
+
+.proj-content{
+  height: 80vh;
+  border: 6px solid rgb(0,100,100);
+  display: flex;
+  align-items: stretch;
+}
+
+.file-tree-container{
+  background-color: rgb(25,0,43);
+  width: 195px;
+}
+
+.code-window{
+  background-color: rgba(25,0,43,0.8);
+  position: block;
+  flex-grow: 1;
+}
+
+.CodeMirror{
+  height: 78vh;
+  background-color: #000000;
+}
+
+.cm-s-default, .cm-s-material {
+background-color: #000;
+}
