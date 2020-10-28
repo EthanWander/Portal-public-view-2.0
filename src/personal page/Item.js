@@ -75,7 +75,7 @@ function Item({ item, setItem, viewProj, setViewProj, x, setX, v, setV, a, setA,
     }
         
     if(v !== 0 && !onBtn) {
-      setA(a=>-v/20);
+      setA(a=>-v/40);
       if(v<0.2 && v>-0.2){ 
         setV(0);
         setA(0);
