@@ -34,8 +34,8 @@ function Projects({date, viewProj, setViewProj, winDim}){
   
   const handleMouseOver = (side) => {
     setOnBtn(true);
-    if(side === "left") setA(0.1);
-    else setA(-0.1);
+    if(side === "left") setA(0.05);
+    else setA(-0.05);
   }
   
   const handleMouseOut = (side) => {
