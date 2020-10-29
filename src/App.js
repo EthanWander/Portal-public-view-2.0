@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useHistory } from 'react';
+import {CopyToClipboard} from 'react-copy-to-clipboard';
 import './App.css';
 import './styles/proj-strip.css';
 import './styles/project.css';
@@ -8,7 +9,7 @@ import Profile from './images/LinkedIn1.jpeg';
 import Projects from './personal page/Projects.js';
 import ProfileEditor from './personal page/ProfileEditor.js';
 import AboutEditor from './personal page/AboutEditor.js';
-import ViewProject from './personal page/ViewProject.js';
+import ViewProject from './personal page/Project Viewer/ViewProject.js';
 import SeeCV from './SeeCV.js';
 
 function getWindowDimensions() {
@@ -17,6 +18,7 @@ function getWindowDimensions() {
 }
 
 function App({date}) {
+  const [linkDescription, setLinkDescription] = useState("");
   const [aboutTxtShowAll, setAboutTxtShowAll] = useState(false);
   const [onProfileEditor, setOnProfileEditor] = useState(false);
   const [winDim, setWinDim] = useState(getWindowDimensions());
@@ -25,8 +27,39 @@ function App({date}) {
   const [aboutTxt, setAboutTxt] = useState("Experienced Software Developer with a thorough knowledge in the following coding languages: C#, Java, Python, JavaScript, HTML, CSS and React. Currently studying for my Bachelor’s Degree in Mathematics and Physics at the University of Bar Ilan (1 year to graduation). Highly motivated, passionate about technology, a self-learner with a proactive and a hands on approach. Looking for a part time Software Development job.");
   const [viewProj, setViewProj] = useState(false);
   const [viewCV, setViewCV] = useState(false);
+  //const history = useHistory();
 
   const aboutTxtLim = 300;
+  
+  const hoverLinkBtn = (type) => {
+    switch(type){
+      case "email":
+        setLinkDescription("Click this link to copy my email address to your clipboard");
+        break;
+      case "linkedin":
+        setLinkDescription("Click this link to return to my LinkedIn page");
+        break;
+      case "github":
+        setLinkDescription("Click this link to view the code for this website");
+        break;
+      default:
+        break;
+    }
+  }
+  
+  const handleClickLink = (e, type) => {
+    e.preventDefault();
+    switch(type){
+      case "linkedin":
+        window.location.assign("https://www.linkedin.com/in/eitan-wander-5744281b8/");
+        break;
+      case "github":
+        window.location.assign("https://github.com/EthanWander/Portal-public-view-2.0/tree/master");
+        break;
+      default:
+        break;
+    }
+  }
   
   const handleEditProfBtn = (e) => {
     e.preventDefault();
@@ -71,6 +104,16 @@ function App({date}) {
   
   return (
     <div className="App">
+      <div className="links">
+        <CopyToClipboard text="ethanwander@gmail.com">
+          <button onMouseOver={() => hoverLinkBtn("email")}><i class="fas fa-at"></i></button>
+        </CopyToClipboard>
+        <button onClick={(e) => handleClickLink(e, "linkedin")} onMouseOver={() => hoverLinkBtn("linkedin")}><i class="fab fa-linkedin"></i></button>
+        <button onClick={(e) => handleClickLink(e, "github")} onMouseOver={() => hoverLinkBtn("github")}><i class="fab fa-github"></i></button>
+        <div className="link-description">
+          {linkDescription}
+        </div>
+      </div>
       <div className="profile-strip">
         <div className="profile">
           <img className="profile-img" alt="profile" src={Profile}/>

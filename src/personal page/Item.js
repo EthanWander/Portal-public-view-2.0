@@ -48,7 +48,6 @@ function Item({ item, setItem, viewProj, setViewProj, x, setX, v, setV, a, setA,
         else allInItem.current.style.opacity = 0;
       }
       if(item.x+x > dims.winDim.width/2+dims.listWidth/2) {
-        console.log("here");
         let next = item;
         next.x = item.x-dims.listWidth+dims.l-dims.pad;
         setItem(next);
@@ -67,7 +66,6 @@ function Item({ item, setItem, viewProj, setViewProj, x, setX, v, setV, a, setA,
         else allInItem.current.style.opacity = 0;
       }
       if(item.x+x < dims.winDim.width/2-dims.listWidth/2) {
-        console.log("here");
         let next = item;
         next.x = item.x+dims.listWidth-dims.l+dims.pad;
         setItem(next);

@@ -12,17 +12,24 @@
   justify-content: space-between;
 }
 
+.nav-list{
+  display: flex;
+}
+
 .nav-item{
   background-color: rgba(0,0,0,0);
-  border-bottom: 2rem solid rgb(0,100,100);
-    border-left: 2rem solid transparent;
-    border-right: 2rem solid transparent;
-    height: 0;
-    width: 200px;
+  border-left: 2rem solid transparent;
+  border-right: 2rem solid transparent;
+  height: 0;
+  width: 200px;
   display: flex;
-  margin-bottom: -0.3rem;
   justify-content: center;
   color: white;
+  margin-left: -2rem;
+}
+
+.nav-item:first-of-type{
+  margin-left: 0;
 }
 
 .proj-window-options .nav-item{
@@ -32,13 +39,19 @@
 }
 
 .nav-item i{
-  margin-top: 0.2rem;
+  margin-top: 0.5rem;
+}
+
+.x-btn{
+  border-bottom: 2rem solid rgb(0,70,70);
+  font-size: 20px;
 }
 
 .proj-content{
   height: 80vh;
-  border: 6px solid rgb(0,100,100);
+  border: 6px solid rgb(0,70,70);
   display: flex;
+  box-sizing: content-box;
   align-items: stretch;
 }
 
@@ -47,18 +60,69 @@
   width: 195px;
 }
 
+.preview-window{
+  flex-grow: 1;
+}
+
+iframe{
+   width: 100%; 
+   height: 100%;
+   border: none;
+   background-color: white;
+}
+
+.code-mirror{
+  height: 100%;
+}
+
 .code-window{
-  background-color: rgba(25,0,43,0.8);
   position: block;
+  height: 80vh;
   flex-grow: 1;
 }
 
 .CodeMirror{
-  height: 78vh;
-  background-color: #000000;
-  padding-left: 1rem;
+  background-color: rgba(25,0,43,0.8) !important;
+  height: 100% !important;
 }
 
-.cm-s-default, .cm-s-material {
-  background-color: #000;
+.CodeMirror-lines{
+  padding-left: 0.4rem;
 }
+
+.CodeMirror-linenumbers{
+  background-color: rgba(25,0,43,0.8) !important;
+  padding-right: 0.6rem;
+}
+
+.CodeMirror-linenumber{
+  text-align: center;
+}
+
+
+
+.project-file-tree{
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.project-file-btn{
+  color: white;
+  font-size: 18px;
+  padding: 0;
+  height: 18px;
+  text-align: left;
+}
+
+.ProjectFile *{
+  margin-right: 0.5rem;
+}
+
+
+
+
+
+
+
