@@ -106,10 +106,10 @@ function App({date}) {
     <div className="App">
       <div className="links">
         <CopyToClipboard text="ethanwander@gmail.com">
-          <button onMouseOver={() => hoverLinkBtn("email")}><i class="fas fa-at"></i></button>
+          <button onMouseOver={() => hoverLinkBtn("email")}><i className="fas fa-at"></i></button>
         </CopyToClipboard>
-        <button onClick={(e) => handleClickLink(e, "linkedin")} onMouseOver={() => hoverLinkBtn("linkedin")}><i class="fab fa-linkedin"></i></button>
-        <button onClick={(e) => handleClickLink(e, "github")} onMouseOver={() => hoverLinkBtn("github")}><i class="fab fa-github"></i></button>
+        <button onClick={(e) => handleClickLink(e, "linkedin")} onMouseOver={() => hoverLinkBtn("linkedin")}><i className="fab fa-linkedin"></i></button>
+        <button onClick={(e) => handleClickLink(e, "github")} onMouseOver={() => hoverLinkBtn("github")}><i className="fab fa-github"></i></button>
         <div className="link-description">
           {linkDescription}
         </div>

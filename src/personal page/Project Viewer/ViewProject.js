@@ -4,6 +4,7 @@ import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/material.css';
 import 'codemirror/mode/xml/xml';
 import 'codemirror/mode/css/css';
+import 'codemirror/mode/javascript/javascript';
 import '../../styles/view-proj.css';
 import 'codemirror/addon/display/autorefresh';
 import ProjectFile from './ProjectFile.js';
@@ -26,8 +27,9 @@ function ViewProject({viewProj, setViewProj}){
   const [first, setFirst] = useState(true);
   const [selTab, setSelTab] = useState("code");
   const [appFile, setAppFile] = useState(defaultTree);
+  const [curFile, setCurFile] = useState(null);
   
-  const srcDoc = "<html><body>" + htmlCode + "</body><style>" + cssCode + "</style></html>";
+  const [srcDoc, setSrcDoc] = useState("<html><body>" + htmlCode + "</body><style>" + cssCode + "</style><script>" + jsCode + "</script></html>");
   
   const handleXBtnClick = () => {
     setViewProj(false);
@@ -41,7 +43,20 @@ function ViewProject({viewProj, setViewProj}){
   }
   
   const handleChange = (editor, data, value) => {
-    if(!first) setHtmlCode(value);
+    if(!first)
+    {
+      switch(codeType){
+        case "xml":
+          setHtmlCode(value);
+          break;
+        case "css":
+          setCssCode(value);
+          break;
+        case "javascript":
+          setJsCode(value);
+          break;
+      }
+    } 
     else setFirst(false);
   }
   
@@ -88,7 +103,15 @@ function ViewProject({viewProj, setViewProj}){
       <div className="proj-content">
         <div className="file-tree-container" style={{display: (selTab === "code") ? "block" : "none"}}>
           <div className="project-file-tree">
-            <ProjectFile properties={appFile} tree={appFile} setTree={setAppFile} setCodeType={setCodeType}/>
+            <ProjectFile 
+              properties={appFile} 
+              codeType={codeType}
+              setCodeType={setCodeType}
+              key={appFile.key}
+              curFile={curFile}
+              setCurFile={setCurFile}
+              setFirst={setFirst}
+            />
           </div>
         </div>
         <div className="code-window" style={{display: (selTab === "code") ? "block" : "none"}}>
